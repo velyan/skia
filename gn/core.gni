@@ -6,6 +6,7 @@
 # Things are easiest for everyone if these source paths are absolute.
 _src = get_path_info("../src", "abspath")
 _include = get_path_info("../include", "abspath")
+_experimental = get_path_info("../experimental", "abspath")
 
 skia_core_sources = [
   "$_src/c/sk_imageinfo.cpp",
@@ -565,6 +566,33 @@ skia_skpicture_sources = [
   "$_src/shaders/SkPictureShader.h",
 ]
 
+skia_svg_sources = [
+   "$_experimental/svg/model/SkSVGAttribute.cpp",
+   "$_experimental/svg/model/SkSVGAttributeParser.cpp",
+   "$_experimental/svg/model/SkSVGCircle.cpp",
+   "$_experimental/svg/model/SkSVGClipPath.cpp",
+   "$_experimental/svg/model/SkSVGContainer.cpp",
+   "$_experimental/svg/model/SkSVGDOM.cpp",
+   "$_experimental/svg/model/SkSVGEllipse.cpp",
+   "$_experimental/svg/model/SkSVGGradient.cpp",
+   "$_experimental/svg/model/SkSVGLine.cpp",
+   "$_experimental/svg/model/SkSVGLinearGradient.cpp",
+   "$_experimental/svg/model/SkSVGNode.cpp",
+   "$_experimental/svg/model/SkSVGPath.cpp",
+   "$_experimental/svg/model/SkSVGPattern.cpp",
+   "$_experimental/svg/model/SkSVGPoly.cpp",
+   "$_experimental/svg/model/SkSVGRadialGradient.cpp",
+   "$_experimental/svg/model/SkSVGRect.cpp",
+   "$_experimental/svg/model/SkSVGRenderContext.cpp",
+   "$_experimental/svg/model/SkSVGSVG.cpp",
+   "$_experimental/svg/model/SkSVGShape.cpp",
+   "$_experimental/svg/model/SkSVGStop.cpp",
+   "$_experimental/svg/model/SkSVGTransformableNode.cpp",
+   "$_experimental/svg/model/SkSVGUse.cpp",
+   "$_experimental/svg/model/SkSVGValue.cpp",
+ ]
+
+skia_core_sources += skia_svg_sources
 skia_core_sources += skia_pathops_sources
 skia_core_sources += skia_skpicture_sources
 
